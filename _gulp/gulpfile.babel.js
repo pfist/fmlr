@@ -5,6 +5,7 @@ import sass from 'gulp-sass'
 import postcss from 'gulp-postcss'
 import autoprefixer from 'autoprefixer'
 import browserSync from 'browser-sync'
+import pkg from './package.json'
 
 const server = browserSync.create()
 
@@ -30,12 +31,24 @@ function preview () {
   watch('assets/sass/**/*.scss', styles)
 }
 
-// Gscan
-function scan () {}
-
 // Zip theme for production
-function zip () {}
+function zip () {
+  return gulp.src(['**/*', '!node_modules/**', `!${pkg.name}.zip`, '!assets/sass/**/*'])
+    .pipe(zip(`${pkg.name}.zip`))
+    .pipe(gulp.dest('.'))
+}
+
+// Gscan
+function scan () {
+  gscan.checkZip({
+    path: `${pkg.name}.zip`,
+    name: pkg.name
+  }).then(result => {
+    console.log(result)
+  }).catch(error => {
+    console.error(error)
+  })
+}
 
 exports.develop = series(styles, preview)
-exports.pack = series(scan, zip)
-exports.scan = scan
+exports.pack = series(zip, scan)

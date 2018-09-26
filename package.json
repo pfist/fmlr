@@ -23,7 +23,7 @@
   "scripts": {
     "develop": "cd _gulp && gulp develop",
     "pack": "cd _gulp && gulp pack",
-    "scan": "cd _gulp && gulp scan"
+    "scan": "gscan ."
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
@@ -31,9 +31,11 @@
     "@babel/register": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "browser-sync": "^2.24.7",
+    "gscan": "^2.2.1",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-zip": "^4.2.0"
   },
   "browserslist": [
     "defaults"
