@@ -21,12 +21,20 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "gulp start",
-    "test": "gulp test"
+    "develop": "cd _gulp && gulp develop",
+    "pack": "cd _gulp && gulp pack",
+    "scan": "cd _gulp && gulp scan"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0"
-  }
+    "@babel/register": "^7.0.0",
+    "autoprefixer": "^9.1.5",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
