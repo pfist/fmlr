@@ -1,0 +1,32 @@
+{
+  "name": "familiar",
+  "description": "A starting point for Ghost themes with a few goodies to make your life easier.",
+  "version": "0.1.0",
+  "engines": {
+    "ghost": ">=2.0.0"
+  },
+  "author": {
+    "name": "Nick Pfisterer",
+    "email": "nick@polymoon.net",
+    "url": "https://polymoon.net"
+  },
+  "keywords": [
+    "ghost",
+    "gulp",
+    "postcss",
+    "sass",
+    "starter",
+    "template",
+    "theme"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp start",
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0"
+  }
+}
