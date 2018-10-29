@@ -1,43 +1,41 @@
 {
   "name": "familiar",
-  "description": "A starting point for Ghost themes with a few goodies to make your life easier.",
-  "version": "0.1.0",
+  "description": "Accelerated theme development for Ghost",
+  "version": "0.0.0",
+  "author": "Nick Pfisterer",
+  "bin": {
+    "familiar": "./bin/run",
+    "fmlr": "./bin/run"
+  },
+  "bugs": "https://github.com/polymoon/familiar/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.4",
+    "@oclif/config": "^1.8.8",
+    "@oclif/plugin-help": "^2.1.3",
+    "globby": "^8.0.1"
+  },
+  "devDependencies": {},
   "engines": {
-    "ghost": ">=2.0.0"
+    "node": ">=8.0.0"
   },
-  "author": {
-    "name": "Nick Pfisterer",
-    "email": "nick@polymoon.net",
-    "url": "https://polymoon.net"
-  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/polymoon/familiar",
   "keywords": [
     "ghost",
-    "gulp",
-    "postcss",
-    "sass",
-    "starter",
-    "template",
-    "theme"
+    "theme",
+    "cli"
   ],
   "license": "MIT",
-  "scripts": {
-    "develop": "cd _gulp && gulp develop",
-    "pack": "cd _gulp && gulp pack",
-    "scan": "gscan ."
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "familiar",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
   },
-  "dependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0",
-    "autoprefixer": "^9.1.5",
-    "browser-sync": "^2.24.7",
-    "gscan": "^2.2.1",
-    "gulp": "^4.0.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-zip": "^4.2.0"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  "repository": "polymoon/familiar"
 }
