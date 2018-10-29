@@ -1,26 +1,58 @@
 # Familiar
-A starting point for Ghost themes with a few goodies to make your life easier.
+Accelerated theme development for Ghost.
 
 # Usage
-Use ghost-cli to setup a local Ghost server.
+Install the Familiar CLI globally.
+```
+$ npm install -g familiar-cli
+```
+
+Use Ghost CLI to setup a local Ghost server.
 ```
 $ ghost install local
 ```
 
-Navigate to the themes directory and clone Familiar.
+Navigate to the themes directory and create a new theme.
 ```
 $ cd <ghost-directory>/content/themes
-$ git clone https://github.com/polymoon/familiar
+$ familiar create
 ```
 
-Install Familiar's dependencies.
+Start a development server.
 ```
-$ npm install
+$ familiar develop
 ```
 
-Now you can run one of Familiar's commands:
-- **npm run develop** - Compile Sass, run PostCSS, and start a development server that automatically reloads when changes to Sass or Handlebars files are detected. Note: Each time you add a new file to your theme, Ghost must be restarted in order to detect them.
-- **npm run pack** - Pack your theme for production in a ZIP archive and scan it for errors and feature compatibility using Gscan.
-- **npm run scan** - Scan your theme without packing a ZIP archive.
+# Commands
+
+## Create
+Create a new Ghost theme.
+```
+$ familiar create
+```
+
+## Install
+Install an existing Ghost theme from GitHub, Gitlab, or Bitbucket.
+```
+$ familiar install <provider:owner/repo>
+```
+
+## Develop
+Start a development server.
+```
+$ familiar develop
+```
+
+## Scan
+Scan your theme with Gscan.
+```
+$ familiar scan
+```
+
+## Build
+Prepare your theme for production
+```
+$ familiar build
+```
 
 Happy theme development!
