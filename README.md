@@ -1,10 +1,10 @@
-# Familiar
-Accelerated theme development for Ghost.
+# fmlr
+> Accelerated theme development for Ghost. Pronounced "Familiar".
 
 # Usage
-Install the Familiar CLI globally.
+Install fmlr globally.
 ```
-$ npm install -g familiar-cli
+$ npm install -g fmlr
 ```
 
 Use Ghost CLI to setup a local Ghost server.
@@ -15,44 +15,38 @@ $ ghost install local
 Navigate to the themes directory and create a new theme.
 ```
 $ cd <ghost-directory>/content/themes
-$ familiar create
+$ fmlr create
 ```
 
-Start a development server.
+Run fmlr's development server and start editing your theme right away.
 ```
-$ familiar develop
+$ fmlr develop
 ```
 
 # Commands
 
 ## Create
-Create a new Ghost theme.
+Create a new Ghost theme, including base template files and a prefilled package.json.
 ```
-$ familiar create
-```
-
-## Install
-Install an existing Ghost theme from GitHub, Gitlab, or Bitbucket.
-```
-$ familiar install <provider:owner/repo>
+$ fmlr create
 ```
 
 ## Develop
-Start a development server.
+Start a live development server. fmlr will watch your theme for updates, process assets on the fly, and reload browsers automatically.
 ```
-$ familiar develop
+$ fmlr develop
+```
+
+## Build
+Build a production version of your theme.
+```
+$ fmlr build
 ```
 
 ## Scan
 Scan your theme with Gscan.
 ```
-$ familiar scan
-```
-
-## Build
-Prepare your theme for production
-```
-$ familiar build
+$ fmlr scan
 ```
 
 Happy theme development!
