@@ -1,13 +1,12 @@
 {
-  "name": "familiar",
+  "name": "fmlr",
   "description": "Accelerated theme development for Ghost",
   "version": "0.0.0",
   "author": "Nick Pfisterer",
   "bin": {
-    "familiar": "./bin/run",
     "fmlr": "./bin/run"
   },
-  "bugs": "https://github.com/polymoon/familiar/issues",
+  "bugs": "https://github.com/polymoon/fmlr/issues",
   "dependencies": {
     "@oclif/command": "^1.5.4",
     "@oclif/config": "^1.8.8",
@@ -27,7 +26,7 @@
     "/bin",
     "/src"
   ],
-  "homepage": "https://github.com/polymoon/familiar",
+  "homepage": "https://github.com/polymoon/fmlr",
   "keywords": [
     "ghost",
     "theme",
@@ -37,10 +36,10 @@
   "main": "./src/index.js",
   "oclif": {
     "commands": "./src/commands",
-    "bin": "familiar",
+    "bin": "fmlr",
     "plugins": [
       "@oclif/plugin-help"
     ]
   },
-  "repository": "polymoon/familiar"
+  "repository": "polymoon/fmlr"
 }
