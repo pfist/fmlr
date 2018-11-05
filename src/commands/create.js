@@ -2,8 +2,8 @@
 
 const { Command, flags } = require('@oclif/command')
 const { cli } = require('cli-ux')
-const Listr = require('listr')
 const fs = require('fs-extra')
+const Listr = require('listr')
 
 class CreateCommand extends Command {
   async run () {
