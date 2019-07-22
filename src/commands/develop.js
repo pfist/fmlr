@@ -9,13 +9,13 @@ const autoprefixer = require('autoprefixer')
 const sass = require('gulp-sass')
 
 // fmlr config
-const config = require('../config')
+const config = require('../fmlr.config.js')
 
 // Process assets with gulp
 function processAssets () {
   return src(config.sass.src)
-  .pipe(sass().on('error', sass.logError))
-  .pipe(postcss([autoprefixer()]))
+  .pipe(sass(config.sass.options).on('error', sass.logError))
+  .pipe(postcss([ autoprefixer() ]))
   .pipe(dest(config.sass.dest))
   .pipe(bs.stream())
 }
@@ -25,7 +25,7 @@ function watchFiles () {
   chokidar.watch(config.sass.src)
   .on('change', path => processAssets())
 
-  chokidar.watch(config.templates.src)
+  chokidar.watch(config.hbs.path)
   .on('change', path => bs.reload())
 }
 
@@ -55,7 +55,7 @@ class DevelopCommand extends Command {
       // Start BrowserSync
       {
         title: 'Starting BrowserSync',
-        task: () => bs.init(config.browsersync)
+        task: () => bs.init(config.browsersync.options)
       },
       // Watch theme files
       {
