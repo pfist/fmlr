@@ -3,10 +3,26 @@
   "description": "Accelerated theme development for Ghost",
   "version": "0.0.0",
   "author": "Nick Pfisterer",
+  "bugs": "https://github.com/polymoon/fmlr/issues",
+  "homepage": "https://github.com/polymoon/fmlr",
+  "keywords": [
+    "ghost",
+    "theme",
+    "cli"
+  ],
+  "license": "MIT",
+  "repository": "polymoon/fmlr",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "bin": {
     "fmlr": "./bin/run"
   },
-  "bugs": "https://github.com/polymoon/fmlr/issues",
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "main": "./src/index.js",
   "dependencies": {
     "@oclif/command": "^1.5.18",
     "@oclif/config": "^1.13.2",
@@ -22,22 +38,6 @@
     "gulp-zip": "^5.0.0",
     "listr": "^0.14.3"
   },
-  "devDependencies": {},
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "files": [
-    "/bin",
-    "/src"
-  ],
-  "homepage": "https://github.com/polymoon/fmlr",
-  "keywords": [
-    "ghost",
-    "theme",
-    "cli"
-  ],
-  "license": "MIT",
-  "main": "./src/index.js",
   "oclif": {
     "commands": "./src/commands",
     "bin": "fmlr",
@@ -45,5 +45,4 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "polymoon/fmlr"
 }
