@@ -9,7 +9,7 @@ const zip = require('gulp-zip')
 const gscan = require('gscan')
 
 // fmlr config
-const config = require('../config')
+const config = require('../fmlr.config.js')
 
 // Process assets with gulp
 function processAssets () {
