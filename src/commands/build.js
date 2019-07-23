@@ -6,7 +6,7 @@ const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const sass = require('gulp-sass')
 const zip = require('gulp-zip')
-const gscan = require('gscan')
+// const gscan = require('gscan')
 
 // fmlr config
 const config = require('../fmlr.config.js')
@@ -73,11 +73,11 @@ class BuildCommand extends Command {
         title: 'Reviewing theme with Gscan',
         task: (ctx, task) => fs.readJson('./package.json')
         .then(pkg => {
-          gscan.checkZip({
-            path: `${pkg.name}-${pkg.version}.zip`,
-            name: pkg.name
-          })
-          .catch(error => this.error())
+          // gscan.checkZip({
+          //   path: `${pkg.name}-${pkg.version}.zip`,
+          //   name: pkg.name
+          // })
+          // .catch(error => this.error())
         })
         .catch(error => this.error(error))
       }
