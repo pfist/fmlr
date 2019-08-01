@@ -1,6 +1,6 @@
 'use strict'
 
-const { Command, flags } = require('@oclif/command')
+const { Command } = require('@oclif/command')
 const { cli } = require('cli-ux')
 const fs = require('fs-extra')
 const Listr = require('listr')
