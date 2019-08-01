@@ -1,4 +1,5 @@
 module.exports = {
+  defaultTheme: 'polymoon/spirit',
   sass: {
     src: './assets/sass/**/*.scss',
     dest: './assets/css',
