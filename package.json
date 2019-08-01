@@ -36,7 +36,8 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-zip": "^5.0.0"
+    "gulp-zip": "^5.0.0",
+    "listr": "^0.14.3"
   },
   "oclif": {
     "commands": "./src/commands",
