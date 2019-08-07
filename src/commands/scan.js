@@ -1,13 +1,12 @@
-const { Command, flags } = require('@oclif/command')
+const { Command } = require('@oclif/command')
+const { cli } = require('cli-ux')
 
 class ScanCommand extends Command {
   async run () {
-    // Make sure this directory is a Ghost theme
-    // Run Gscan
-    this.log('Hello from the Scan command!')
+    // Add command logic here
   }
 }
 
-ScanCommand.description = `Scan your theme with Gscan`
+ScanCommand.description = `Scan your theme locally with GScan`
 
 module.exports = ScanCommand

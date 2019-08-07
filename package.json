@@ -1,8 +1,9 @@
 {
   "name": "fmlr",
-  "description": "Accelerated theme development for Ghost",
+  "description": "A theme development companion for Ghost.",
   "version": "0.0.0",
   "author": "Nick Pfisterer",
+  "repository": "polymoon/fmlr",
   "bugs": "https://github.com/polymoon/fmlr/issues",
   "homepage": "https://github.com/polymoon/fmlr",
   "keywords": [
@@ -11,7 +12,6 @@
     "cli"
   ],
   "license": "MIT",
-  "repository": "polymoon/fmlr",
   "engines": {
     "node": ">=10.0.0"
   },
@@ -20,6 +20,8 @@
   },
   "files": [
     "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
     "/src"
   ],
   "main": "./src/index.js",
@@ -27,18 +29,20 @@
     "@oclif/command": "^1.5.18",
     "@oclif/config": "^1.13.2",
     "@oclif/plugin-help": "^2.2.0",
-    "autoprefixer": "^9.6.1",
-    "browser-sync": "^2.26.7",
     "cli-ux": "^5.3.1",
-    "download-git-repo": "^2.0.0",
-    "fs-extra": "^8.1.0",
-    "globby": "^10.0.1",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-zip": "^5.0.0",
-    "listr": "^0.14.3"
+    "download-git-repo": "^2.0.0"
   },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "globby": "^10.0.1",
+    "rimraf": "^2.6.3"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "oclif": {
     "commands": "./src/commands",
     "bin": "fmlr",
@@ -46,10 +50,8 @@
       "@oclif/plugin-help"
     ]
   },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ]
+  "scripts": {
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "postpack": "rimraf oclif.manifest.json"
+  }
 }
