@@ -1,8 +1,8 @@
-# fmlr
-> Accelerated theme development for Ghost. Pronounced "Familiar".
+# Familiar
+A theme development companion for Ghost.
 
 # Usage
-Install fmlr globally.
+Install Familiar globally.
 ```
 $ npm install -g fmlr
 ```
