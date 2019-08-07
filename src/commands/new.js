@@ -6,7 +6,7 @@ const download = require('download-git-repo')
 class NewCommand extends Command {
   async run() {
     const { args } = this.parse(NewCommand)
-    const starterTheme = args.theme ? args.theme : 'polymoon/spirit'
+    const starterTheme = args.theme ? args.theme : config.defaultTheme
 
     cli.action.start(`Downloading starter theme from ${starterTheme}...`)
 
