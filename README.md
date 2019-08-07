@@ -25,22 +25,16 @@ $ fmlr develop
 
 # Commands
 
-## Create
-Create a new Ghost theme, including base template files and a prefilled package.json.
+## New
+Start a new Ghost theme.
 ```
-$ fmlr create
+$ fmlr new <name> [theme]
 ```
 
-## Develop
+## Dev
 Start a live development server. fmlr will watch your theme for updates, process assets on the fly, and reload browsers automatically.
 ```
-$ fmlr develop
-```
-
-## Build
-Build a production version of your theme.
-```
-$ fmlr build
+$ fmlr dev
 ```
 
 ## Scan
@@ -49,4 +43,10 @@ Scan your theme with Gscan.
 $ fmlr scan
 ```
 
-Happy theme development!
+## Build
+Build a production version of your theme.
+```
+$ fmlr build
+```
+
+Have fun making Ghost themes! ♥
