@@ -9,11 +9,14 @@ class DevCommand extends Command {
     try {
       // Make sure there's a valid Ghost theme in this directory
       const pkg = await fs.readJson('./package.json')
-      
-      cli.action.start(`Found ${pkg.name} ${pkg.version}. Starting development server`)
 
-      // Start development server
-      tasks.dev()
+      if (pkg.engines.ghost) {
+        // Notify user we found a Ghost theme
+        this.log(`Found ${pkg.name} ${pkg.version}`)
+
+        // Start development server
+        tasks.dev()
+      }
     } catch (err) {
       this.log('No Ghost theme found.')
     }
