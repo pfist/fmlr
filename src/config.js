@@ -5,8 +5,8 @@ module.exports = {
       style: 'compressed'
     },
     browserSync: {
-      logPrefix: 'fmlr',
-      proxy: 'localhost:2368'
+      logPrefix: 'Server',
+      proxy: 'http://localhost:2368'
     }
   }
 }
