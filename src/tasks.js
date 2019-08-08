@@ -1,43 +1,58 @@
 const autoprefixer = require('autoprefixer')
-const bs = require('browser-sync').create()
+const browserSync = require('browser-sync').create()
 const config = require('./config')
+const { cli } = require('cli-ux')
 const { src, dest, series, watch } = require('gulp')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-sass')
 
 // Process assets
-function processAssets (cb) {
-  console.log('Assets processed')
+function processAssets () {
+  // cli.action.start('Processing assets')
 
-  cb()
+  return src('./assets/sass/**/*.scss')
+    .pipe(sass(config.options.sass).on('error', sass.logError))
+    .pipe(postcss([ autoprefixer() ]))
+    .pipe(dest('./assets/css'))
+    .pipe(browserSync.stream())
+    // .on('end', () => { cli.action.stop() }) 
 }
 
 // Start live development server
 function startServer (cb) {
-  console.log('Development server started')
+  cli.action.start('Starting development server')
 
-  cb()
+  browserSync.init(config.options.browserSync)
+  browserSync.emitter.on('init', () => { 
+    cli.action.stop()
+
+    cb()
+  })
 }
 
 // Watch theme files
-function watchFiles (cb) {
-  console.log('Watching theme files')
+function watchFiles () {
+  console.log('Watching files...')
 
-  cb()
+  // Watch assets
+  watch('./assets/sass/**/*.scss', processAssets)
+
+  // Watch templates
+  watch('./**/*.hbs', cb => {
+    browserSync.reload()
+
+    cb()
+  })
 }
 
 // Scan theme with GScan
-function scanTheme (cb) {
+function scanTheme () {
   console.log('Theme scanned')
-
-  cb()
 }
 
 // Zip production version of theme
-function zipTheme (cb) {
+function zipTheme () {
   console.log('Theme zipped for production')
-
-  cb()
 }
 
 // fmlr dev
