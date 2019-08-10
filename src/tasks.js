@@ -2,9 +2,11 @@ const autoprefixer = require('autoprefixer')
 const browserSync = require('browser-sync').create()
 const config = require('./config')
 const { cli } = require('cli-ux')
+const del = require('del')
 const { src, dest, series, watch } = require('gulp')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-sass')
+const zip = require('gulp-zip')
 
 // Process assets
 function processAssets () {
@@ -15,7 +17,7 @@ function processAssets () {
     .pipe(postcss([ autoprefixer() ]))
     .pipe(dest('./assets/css'))
     .pipe(browserSync.stream())
-    // .on('end', () => { cli.action.stop() }) 
+    // .on('end', () => { cli.action.stop() })
 }
 
 // Start live development server
@@ -51,9 +53,24 @@ function scanTheme (theme) {
 }
 
 // Zip production version of theme
-function zipTheme () {
-  console.log('Theme zipped for production')
+function zipTheme (name) {
+  cli.action.start('Building theme for production')
+
+  return src(['./**/*', '!./_build', '!./assets/sass', '!./assets/sass/**/*.scss'])
+    .pipe(zip(`${name}.zip`))
+    .pipe(dest('_build'))
+    .on('end', () => { cli.action.stop() })
 }
+
+// Remove old build files
+function cleanBuild () {
+  return del('./_build')
+}
+
+// Export build tasks separately so we can pass arguments to them
+exports.clean = cleanBuild
+exports.assets = processAssets
+exports.zip = zipTheme
 
 // fmlr dev
 exports.dev = series(processAssets, startServer, watchFiles)
@@ -62,4 +79,4 @@ exports.dev = series(processAssets, startServer, watchFiles)
 exports.scan = scanTheme
 
 // fmlr build
-exports.build = series(processAssets, zipTheme, scanTheme)
+exports.build = series(cleanBuild, processAssets, zipTheme, scanTheme)
