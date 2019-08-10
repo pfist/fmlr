@@ -46,8 +46,8 @@ function watchFiles () {
 }
 
 // Scan theme with GScan
-function scanTheme () {
-  console.log('Theme scanned')
+function scanTheme (theme) {
+  console.log('This command is currently disabled. Use the Gscan CLI instead.')
 }
 
 // Zip production version of theme
