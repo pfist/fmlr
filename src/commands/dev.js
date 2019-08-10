@@ -1,6 +1,4 @@
 const { Command } = require('@oclif/command')
-const { cli } = require('cli-ux')
-const config = require('../config')
 const fs = require('fs-extra')
 const tasks = require('../tasks')
 
@@ -16,9 +14,11 @@ class DevCommand extends Command {
 
         // Start development server
         tasks.dev()
+      } else {
+        this.error('No Ghost theme found')
       }
     } catch (err) {
-      this.log('No Ghost theme found.')
+      this.error(err)
     }
   }
 }
