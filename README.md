@@ -30,8 +30,8 @@ Start a new Ghost theme.
 ```
 $ fmlr new <name> [theme]
 ```
-**name (required)** - The name of your theme. Also used to name the directory where your theme lives.
-**theme (optional)** - URL or shorthand pointing to an alternate starter theme. Supports GitHub, Gitlab, and Bitbucket. See the docs for [download-git-repo](https://github.com/flipxfx/download-git-repo) for URL formatting.
+- **name (required)** - The name of your theme. Also used to name the directory where your theme lives.
+- **theme (optional)** - URL or shorthand pointing to an alternate starter theme. Supports GitHub, Gitlab, and Bitbucket. See the docs for [download-git-repo](https://github.com/flipxfx/download-git-repo) for URL formatting.
 
 ## Dev
 Start a live development server. Familiar will watch your theme for updates, process assets on the fly, and reload browsers automatically.
