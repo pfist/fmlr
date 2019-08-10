@@ -62,7 +62,7 @@ function zipTheme (name) {
     .on('end', () => { cli.action.stop() })
 }
 
-// Remove old build files
+// Remove previous build files if they exist
 function cleanBuild () {
   return del('./_build')
 }
