@@ -12,15 +12,15 @@ Use Ghost CLI to setup a local Ghost server.
 $ ghost install local
 ```
 
-Navigate to the themes directory and create a new theme.
+Navigate to the themes directory and start a new theme.
 ```
 $ cd <ghost-directory>/content/themes
-$ fmlr create
+$ fmlr new <name>
 ```
 
-Run fmlr's development server and start editing your theme right away.
+Start up a live development server and get going right away.
 ```
-$ fmlr develop
+$ fmlr dev
 ```
 
 # Commands
