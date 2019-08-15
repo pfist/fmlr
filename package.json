@@ -1,7 +1,7 @@
 {
   "name": "fmlr",
   "description": "A theme development companion for Ghost.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Nick Pfisterer",
   "repository": "polymoon/fmlr",
   "bugs": "https://github.com/polymoon/fmlr/issues",
